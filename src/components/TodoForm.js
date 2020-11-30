@@ -14,7 +14,6 @@ class TodoForm extends React.Component {
     });
   };
 
-  // class property to submit form
   handleSubmit = e => {
     e.preventDefault();
     this.props.handleAdd(this.state.textInput);
@@ -24,14 +23,14 @@ class TodoForm extends React.Component {
   }
 
   handleCompleted = e => {
-    //e.preventDefault();
+    e.preventDefault();
     this.props.handleCompleted();
     console.log('Clear');
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="form-container">
         <input value={this.state.textInput} onChange={this.handleChanges} type="text" name="item" />
         <button className="add-btn">Add Todo</button>
         <button onClick={this.handleCompleted} className="clear-btn">Clear Completed</button>
