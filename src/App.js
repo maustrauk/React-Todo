@@ -19,6 +19,10 @@ const todoData = [
   }
 ];
 
+window.localStorage.setItem('todoData', JSON.stringify(todoData));
+
+
+
 class App extends React.Component {
 
    constructor() {
